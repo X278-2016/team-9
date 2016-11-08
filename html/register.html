@@ -35,50 +35,211 @@
 </head>
 <body>
 <h2 class="mx-auto text-center"> Register </h2>
+
 <form class="form-horizontal" style="padding-right:20px; padding-left:20px;">
     <div class="form-group">
         <label for="username" class="col-sm-2 control-label">Username</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="username" class="form-control" id="username" placeholder="Username">
         </div>
     </div>
     <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Password</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
     </div>
     <div class="form-group">
         <label for="email" class="col-sm-2 control-label">Email</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="email" class="form-control" id="email" placeholder="Email">
         </div>
     </div>
     <div class="form-group">
-        <p class="text-center">The following questions are optional. We use demographic information to better our services.</p>
+        <p class="col-sm-8">The following questions are optional. We use demographic information to better our services.</p>
     </div>
     <div class="form-group">
-        <label for="race" class="col-sm-2 control-label">What race do you identify with?</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="race">
+        <label for="county" class="col-sm-2 control-label">What county do you live in?</label>
+        <div class = "col-sm-6">
+            <select class="form-control" id = county>
+                <option>Choose an option</option>
+                <option>Anderson</option>
+                <option>Bedford</option>
+                <option>Benton</option>
+                <option>Bledsoe</option>
+                <option>Blount</option>
+                <option>Bradley</option>
+                <option>Campbell</option>
+                <option>Cannon</option>
+                <option>Carter</option>
+                <option>Cheatham</option>
+                <option>Chester</option>
+                <option>Claiborne</option>
+                <option>Clay</option>
+                <option>Cocke</option>
+                <option>Coffee</option>
+                <option>Crockett</option>
+                <option>Cumberland</option>
+                <option>Davidson</option>
+                <option>Decatur</option>
+                <option>DeKalb</option>
+                <option>Dickson</option>
+                <option>Dyer</option>
+                <option>Fayette</option>
+                <option>Fentress</option>
+                <option>Franklin</option>
+                <option>Gibson</option>
+                <option>Giles</option>
+                <option>Grainger</option>
+                <option>Greene</option>
+                <option>Grundy</option>
+                <option>Hamblen</option>
+                <option>Hamilton</option>
+                <option>Hancock</option>
+                <option>Hardeman</option>
+                <option>Hardin</option>
+                <option>Hawkins</option>
+                <option>Haywood</option>
+                <option>Henderson</option>
+                <option>Henry</option>
+                <option>Hickman</option>
+                <option>Houston</option>
+                <option>Humphreys</option>
+                <option>Jackson</option>
+                <option>Jefferson</option>
+                <option>Johnson</option>
+                <option>Knox</option>
+                <option>Lake</option>
+                <option>Lauderdale</option>
+                <option>Lawrence</option>
+                <option>Lewis</option>
+                <option>Lincoln</option>
+                <option>Loudon</option>
+                <option>Macon</option>
+                <option>Madison</option>
+                <option>Marion</option>
+                <option>Marshall</option>
+                <option>Maury</option>
+                <option>McMinn</option>
+                <option>McNairy</option>
+                <option>Meigs</option>
+                <option>Monroe</option>
+                <option>Montgomery</option>
+                <option>Moore</option>
+                <option>Morgan</option>
+                <option>Obion</option>
+                <option>Overton</option>
+                <option>Perry</option>
+                <option>Pickett</option>
+                <option>Polk</option>
+                <option>Putnam</option>
+                <option>Rhea</option>
+                <option>Roane</option>
+                <option>Robertson</option>
+                <option>Rutherford</option>
+                <option>Scott</option>
+                <option>Sequatchie</option>
+                <option>Sevier</option>
+                <option>Shelby</option>
+                <option>Smith</option>
+                <option>Stewart</option>
+                <option>Sullivan</option>
+                <option>Sumner</option>
+                <option>Tipton</option>
+                <option>Trousdale</option>
+                <option>Unicoi</option>
+                <option>Union</option>
+                <option>Van Buren</option>
+                <option>Warren</option>
+                <option>Washington</option>
+                <option>Wayne</option>
+                <option>Weakley</option>
+                <option>White</option>
+                <option>Williamson</option>
+                <option>Wilson</option>
+            </select>
         </div>
     </div>
     <div class="form-group">
-        <label for="income" class="col-sm-2 control-label">What is your average income?</label>
-        <div class="col-sm-10">
+        <label for="income" class="col-sm-2 control-label">What is your average household income?</label>
+        <div class="col-sm-6">
             <input type="text" class="form-control" id="income">
         </div>
     </div>
     <div class="form-group">
-        <label for="city" class="col-sm-2 control-label">What city do you live in?</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="city">
+        <label for="num_members" class="col-sm-2 control-label">How many members are in your household?</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" id="num_members">
         </div>
     </div>
     <div class="form-group">
         <label for="age" class="col-sm-2 control-label">What is your age?</label>
-        <div class="col-sm-10">
-            <input type="age" class="form-control" id="age">
+        <div class = "col-sm-6">
+            <select class="form-control" id="age">
+                <option>Choose an option</option>
+                <option>24 and below</option>
+                <option>25-34</option>
+                <option>35-44</option>
+                <option>45-54</option>
+                <option>55-64</option>
+                <option>65-74</option>
+                <option>75 and above</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="gender" class="col-sm-2 control-label">What is your gender?</label>
+        <div class = "col-sm-6">
+            <select class="form-control" id="gender">
+                <option>Choose an option</option>
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="disabled" class="col-sm-2 control-label">Are you disabled?</label>
+        <div class = "col-sm-6">
+            <select class="form-control" id="disabled">
+                <option>Choose an option</option>
+                <option>yes</option>
+                <option>no</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="veteran" class="col-sm-2 control-label">Are you a veteran?</label>
+        <div class = "col-sm-6">
+            <select class="form-control" id="veteran">
+                <option>Choose an option</option>
+                <option>yes</option>
+                <option>no</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="born_in_us" class="col-sm-2 control-label">Were you born in the United States?</label>
+        <div class = "col-sm-6">
+            <select class="form-control" id="born_in_us">
+                <option>Choose an option</option>
+                <option>yes</option>
+                <option>no</option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="race" class="col-sm-2 control-label">What race do you identify with?</label>
+        <div class = "col-sm-6">
+            <select class="form-control" id="race">
+                <option>Choose an option</option>
+                <option>White</option>
+                <option>Hispanic or Latino</option>
+                <option>Black or African American</option>
+                <option>Native American or American Indian</option>
+                <option>Asian/Pacific Islander</option>
+                <option>Other</option>
+            </select>
         </div>
     </div>
     <div class="form-group">
