@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each user, i in users
+            li
+                = user.lgnName
+                = user.password
+                = user.userName
+                = user.race
+                = user.income
+                = user.age
+                = user.email
+                = user.phone
+                form(action='/users/#{user._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p 
+                    a(href='/users/#{user._id}/edit') Edit
+                p
+                    a(href='/users/#{user._id}') Show

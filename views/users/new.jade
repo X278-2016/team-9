@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	form#formAddBlob(name="adduser",method="post",action="/users")
+		p lgnName: 
+			input#inputName(type="text", placeholder="ex. William", name="lgnName")
+		p password:
+			input#inputBadge(type='text', name='password')
+		p userName:
+			input#inputBadge(type='text', name='userName')
+		p race:
+			input#inputBadge(type='text', name='race')
+		p income:
+			input#inputBadge(type='number', name='income')
+		p age:
+			input#inputDob(type='date',  name='age')
+		p email:
+			input#inputBadge(type='text', name='email')
+		p phone:
+			input#inputBadge(type='number', name='phone')
+		p
+			button#btnSubmit(type="submit") submit
