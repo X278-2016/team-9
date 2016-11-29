@@ -3,7 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'), //mongo connection
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
-var User = require('../model/user');
+var User = require('../models/user');
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
       if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -45,20 +45,13 @@ router.route('/')
         user.isDisabled = req.body.isDisabled;
         user.isVeteran = req.body.isVeteran;
         user.isForeign = req.body.isForeign;
-        
+        user.createDate = req.body.createDate;
         user.save(function(err){
           if(err) 
             res.send(err);
           res.json({res_msg: 'user created success!'});
         });
     });
-
-
-/* GET New User page. */
-router.get('/new', function(req, res) {
-    res.render('users/new', { title: 'Add New User' });
-});
-
 
 // route middleware to validate :id
 router.param('id', function(req, res, next, id) {
@@ -90,7 +83,6 @@ router.param('id', function(req, res, next, id) {
         } 
     });
 });
-
 
 router.route('/:id')
   .get(function(req, res) {
@@ -139,7 +131,7 @@ router.route('/:id')
         } 
         res.json({res_msg: 'User deleted!'});
     });
-});
+  });
 
 
 module.exports = router;

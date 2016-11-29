@@ -21,5 +21,6 @@ var userSchema = new mongoose.Schema({
 	isDisabled: Boolean,
 	isVeteran: Boolean,
 	isForeign: Boolean,
+	createDate: Date
 });
 module.exports = mongoose.model('User', userSchema);
