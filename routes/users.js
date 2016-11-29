@@ -3,7 +3,7 @@ var express = require('express'),
     mongoose = require('mongoose'), //mongo connection
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
-var User = require('../model/user');
+var User = require('../models/user');
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
       if (req.body && typeof req.body === 'object' && '_method' in req.body) {

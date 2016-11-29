@@ -3,7 +3,8 @@ var express = require('express'),
     mongoose = require('mongoose'), //mongo connection
     bodyParser = require('body-parser'), //parses information from POST
     methodOverride = require('method-override'); //used to manipulate POST
-var Question = require('../model/question');
+var Question = require('../models/question');
+var Button =  require('../models/button');
 router.use(bodyParser.urlencoded({ extended: true }))
 router.use(methodOverride(function(req, res){
       if (req.body && typeof req.body === 'object' && '_method' in req.body) {
@@ -25,15 +26,14 @@ router.route('/')
           if(err) 
             res.send(err);
           res.json(questions);
+
         });
     })
     //POST a new user
     .post(function(req, res) {
         // Get values from POST request. These can be done through forms or REST calls.
         var question = new Question();
-        question.content = req.body.content;
-        question.yesPtr = req.body.yesPtr;
-        question.noPtr = req.body.noPtr;
+        question.body = req.body.body;
         question.createDate = req.body.createDate;
         question.creator = req.body.creator;
         question.save(function(err, question){
@@ -85,7 +85,12 @@ router.route('/:id')
         res.send(err);
       } 
         console.log('GET Retrieving ID: ' + question._id);
-        res.json(question);
+        //res.json(question);
+        Button.find({parentPtr: question._id}, function(err, buttons) {
+            if(err)
+                res.send(err);
+            res.json({question: question, button: buttons});
+        });
     });
   })
   .put(function(req, res) {
@@ -95,9 +100,7 @@ router.route('/:id')
                   res.send("There was a problem updating the information to the database: " + err);
       } 
       question = new Question();
-      question.content = req.body.content;
-      question.yesPtr = req.body.yesPtr;
-      question.noPtr = req.body.noPtr;
+      question.body = req.body.body;
       question.createDate = req.body.createDate;
       question.creator = req.body.creator;
       question.save(function(err) {
@@ -109,7 +112,7 @@ router.route('/:id')
   })
   .delete(function (req, res){
       Question.remove({
-        _id: req.params.user_id
+        _id: req.params.question_id
       }, function(err, question) {
         if (err) {
             res.send(err);
