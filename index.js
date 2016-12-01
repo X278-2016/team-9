@@ -92,7 +92,8 @@ let questions = [{id: 1, heading: "First, we need to know", body: ["Have you eve
     "you owe them. It does not mean you don't owe them money. It means you want them to prove you owe the money.", "You " +
     "can write a letter to the collector to determine what debt they are talking about if you are unsure.", "There " +
     "are some things you should know about when you go to court. Follow the button below to find out more about the " +
-    "process of representing yourself in court."], buttons: [{name:"Tell Me More About a Sworn Denial", child_id: 15}, {name:
+    "process of representing yourself in court."], buttons: [{name:"Tell Me More About a Sworn Denial",
+        child_id: 15}, {name:
     "Tell Me More About Writing a Letter", child_id: 16}, {name: "Tell Me More About Going to Court", child_id: 17}]},
 
     {id: 14, heading: "Consider using a Personal Property Exemption", body: ["Even though you do not have any of the " +
@@ -127,8 +128,10 @@ app.post('/v1/user', function(req, res) {
 });
 
 
+// Handle GET to fetch a question
 app.get('/question', function(req, res) {
     let id = req.query.id ? req.query.id.toLowerCase() : '';
+    let questionData = req.body;
 
     if (true) {
         res.render('question', {

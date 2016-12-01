@@ -4,56 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Start</title>
-    <script type="text/javascript" src="tree.js"></script>
+
     <script src="/js/jquery-2.1.4.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script href="tree.js"></script>
 </head>
 <body>
 <div class="container">
-    <div class="row ">
-        <div class="col-sm-offset-1 col-sm-6 vcenter">
-            <h2>Legal Aid <small>of Middle Tennessee and Cumberlands</small></h2>
+    <div class="row bg-primary">
+        <div class="col-sm-offset-2 col-sm-8 text-center">
+            <h1>Legal Aid</h1>
+            <h5>of Middle Tennessee and Cumberlands</h5>
+            <br>
         </div>
     </div>
-    <div class="row">
-        <div class="col-sm-offset-1 col-sm-1">
-            <a href="index.html" class="text-left vcenter" role="button"><h5>Home</h5></a>
-        </div>
-        <div class="col-sm-1">
-            <a href="aboutus.html" class="text-left vcenter" role="button"><h5>About Us</h5></a>
-        </div>
-        <div class="col-sm-3">
-            <a href="register.html" class="text-left vcenter" role="button"><h5>Take our Demographic Survey</h5></a>
-        </div>
-    </div>
-    <hr>
-
-
     <div class="row">
         <div class="col-sm-offset-2 col-sm-8">
             <h2> This website is designed to help you if you owe money to a company.</h2>
             <hr>
             <h4>What kinds of things might I owe money for?</h4>
             <ol>
-                <li>You might owe money to a company because you didn't pay back all your credit card bills.</li>
-                <li>You might owe money because you had a car repossessed.</li>
-                <li>You might owe money for medical bills.</li>
-                <li>You might owe money becuase you bought something and didn't pay it all back.</li>
-                <li>You might owe money for private student loans. This website only applies to private student loans. If
+                <li>If you didn't pay back all your credit card bills</li>
+                <li>If you had a car repossessed</li>
+                <li>If you owe money for medical bills</li>
+                <li>If you bought something and didn't pay it all back</li>
+                <li>For private student loans. This website only applies to private student loans. If
                     you owe student loans you got from the federal government, you should visit
-                    https://studentaid.ed.gov/sa/repay-loans for more information.</li>
+                    <a href="https://studentaid.ed.gov/sa/repay-loans">this website</a> for more information</li>
             </ol>
-            <h4>You will be asked several questions. The questions will help us give you the best information for your situation.
+            <h4>You will be asked several questions that will help us give you the best information for your situation.
                 This website can give you information if: </h4>
             <ol>
-                <li>Bill collectors are calling you.</li>
-                <li>You owe money and are worried about being sued.</li>
-                <li>You have been sued and have to go to court.</li>
-                <li>You have already been to court and lost.</li>
+                <li>Bill collectors are calling you</li>
+                <li>You are worried about being sued</li>
+                <li>You have been sued and have to go to court</li>
+                <li>You have already been to court and lost</li>
             </ol>
             <h5 class="text-danger">This information cannot take the place of advice from a lawyer. Each case is different and needs individual
                 legal advice.</h5>
-            <button class="btn btn-default btn-lg btn-block" onclick="onClick()">Start Here</button>
+            <a class="btn btn-default btn-lg btn-block" role="button" href="question?id=1">Start Here</a>
         </div>
     </div>
     <div class="row">

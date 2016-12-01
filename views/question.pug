@@ -16,29 +16,27 @@ html(lang="en")
                     h1!= "Legal Aid"
                     h5!= "of Middle Tennessee and Cumberlands"
                     br
+            div(class="row")
+                div(class="col-sm-offset-2 col-sm-8")
+                    h3!= question.heading
+                    hr
 
-            div(class="col-sm-1")
-                div(class="row")
+                    each thing in question.body
+                        p!= thing
+
+                    div
+                        br
+                        each button in question.buttons
+                            - var url = "question?id=" + button.child_id
+                            - var name = button.name
+                            a(href = url, role = "button", class = "btn btn-default btn-lg btn-block")!= name
                     br
-                    h4!= "Links:"
-                div(class = "row")
-                    a(href = "http://www.las.org/about_new/", role="button", class="center-block")!= "About Us"
-                div(class = "row")
-                    a(href = "register.html", role="button")!= "Register"
-                div(class = "row")
-                    a(href = "login.html", role="button")!= "Login"
 
-            div(class="col-sm-offset-1 col-sm-8")
-                h3!= question.heading
+            div(class="row")
                 hr
-
-                each thing in question.body
-                    p!= thing
-
-                div
-                    br
-                    each button in question.buttons
-                        - var url = "question?id=" + button.child_id
-                        - var name = button.name
-                        a(href = url, role = "button", class = "btn btn-default btn-lg btn-block")!= name
-
+                a(href="index.html" role="button")
+                    h4!="Home"
+                a(href="aboutus.html" role="button")
+                    h4!="About Us"
+                a(href="register.html" role="button")
+                    h4!="Take our Demographic Survey"
