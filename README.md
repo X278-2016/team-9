@@ -1,5 +1,4 @@
-# team-9
-Legal Aid
+# Team-9 Legal Aid
 
 ## Using expressjs and mongodb for backend.
 
