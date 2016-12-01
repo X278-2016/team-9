@@ -1,33 +1,30 @@
 # team-9
 Legal Aid
 
-Using expressjs and mongodb for backend.
+## Using expressjs and mongodb for backend.
 
-MODEL:
-	Question: heading, body(required), createDate, creator, lastModDate
-	Button: content(required), parentPtr(required), childPtr, createDate, creator, lastModDate
+## MODEL:
+### Question: heading, body(required), createDate, creator, lastModDate
+### Button: content(required), parentPtr(required), childPtr, createDate, creator, lastModDate
 
-API:
-list all questions
-GET	/questions
-show one question
-GET	/questions/id
-new one question or update
-POST or PUT	/questions
-delete one question
-DELETE	/questions/id
+## API:
+### Question
+|    **Method**    | **Route** | **Params** |
+|----------------|------------|-----------|
+| GET  | /questions | no params |
+| GET      | /questions/id   | id(question id)|
+| POST or PUT | /questions  | body required|
+| DELETE | /questions/id  | id |
 
-get all buttons
-GET	/buttons
-get one button
-GET	/buttons/id
-add or update a question
-POST or PUT	/buttons
-delete button
-DELETE	/buttons/id
-
-upload file
-POST /upload	multipart form: "pdf": pdf file, "questionID": questionID
-
-get file
-GET	/file/questionID
+### Button
+|    **Method**    | **Route** | **Params** |
+|----------------|------------|-----------|
+| GET  | /buttons | no params |
+| GET      | /buttons/id  | id(button id) |
+| POST or PUT | /buttons  | content, parentPtr required|
+| DELETE | /buttons/id  | id |
+### File
+|    **Method**    | **Route** | **Params** |
+|----------------|------------|-----------|
+| POST  | /upload | multipart form: "questionID": questionID, pdf|
+| GET      | /file/id  | id(questionID)|
