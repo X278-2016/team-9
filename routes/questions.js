@@ -101,7 +101,7 @@ router.route('/:id')
       } 
       question = new Question();
       question.body = req.body.body;
-      question.createDate = req.body.createDate;
+     // question.createDate = req.body.createDate;
       question.creator = req.body.creator;
       question.save(function(err) {
           if(err)

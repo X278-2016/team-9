@@ -40,6 +40,7 @@ app.use('/questions', questions);
 app.use('/buttons', buttons);
 
 app.post('/upload', upload.single('pdf'), function(req, res) {
+    console.log(req.body.questionID);
     var dirname = require('path').dirname(__dirname);
     console.log(dirname);
     var filename = req.file.filename;
@@ -55,7 +56,7 @@ app.post('/upload', upload.single('pdf'), function(req, res) {
     var gfs = Grid(conn.db);
 
     var writestream = gfs.createWriteStream({
-        filename: filename
+        filename: req.body.questionID
     });
     read_stream.pipe(writestream);
     writestream.on('close', function (file) {
