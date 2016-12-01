@@ -3,50 +3,31 @@ Legal Aid
 
 Using expressjs and mongodb for backend.
 
-Model for user:
-lgnName: {
-		type: String,
-		unique: true,
-		required: true
-	},
-	password: {
-		type: String,
-		required: true
-	},
-	userName: String,
-	race: String,
-	income: Number,
-	age: Date,
-	email: String,
-	phone: Number,
-	county: String,
-	hhNum: Number,
-	gender: String,
-	isDisabled: Boolean,
-	isVeteran: Boolean,
-	isForeign: Boolean,
-	createDate: Date
-Model for question:
-content: {
-		type: String,
-		required: true
-	},
-	yesPtr: Number,
-	noPtr: Number,
-	createDate: Date,
-	creator: String
-  
-API for user:
-1.create a new user
-POST ip:3000/users   pass in parameters defined in model
-2.update a user
-PUT ip:3000/users/_id 
-3.delete a user
-DELETE ip:3000/users/_id
-4.get all users
-GET ip:3000/users
-5.get a user
-GET ip:3000/users/_id
+MODEL:
+	Question: heading, body(required), createDate, creator, lastModDate
+	Button: content(required), parentPtr(required), childPtr, createDate, creator, lastModDate
 
-API for question:
-Almost the same as the above
+API:
+list all questions
+GET	/questions
+show one question
+GET	/questions/id
+new one question or update
+POST or PUT	/questions
+delete one question
+DELETE	/questions/id
+
+get all buttons
+GET	/buttons
+get one button
+GET	/buttons/id
+add or update a question
+POST or PUT	/buttons
+delete button
+DELETE	/buttons/id
+
+upload file
+POST /upload	multipart form: "pdf": pdf file, "questionID": questionID
+
+get file
+GET	/file/questionID
